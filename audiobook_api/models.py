@@ -57,10 +57,10 @@ class SongItem(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=100)
     duration = models.DurationField()
     uploaded_time = models.DateTimeField(auto_now_add=True)
-
+    songfile= models.FileField(upload_to='documents/',default=True)
     def __str__(self):
         """Return the model as a string"""
         return self.name
@@ -70,9 +70,9 @@ class PodcastItem(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=255)
-    host = models.CharField(max_length=255)
-    participants = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
+    host = models.CharField(max_length=100)
+    participants = models.CharField(max_length=100)
     duration = models.DurationField()
     uploaded_time = models.DateTimeField(auto_now_add=True)
 
@@ -85,9 +85,9 @@ class AudioBookItem(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    title = models.CharField(max_length=255)
-    author = models.CharField(max_length=255)
-    narrator = models.CharField(max_length=255)
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    narrator = models.CharField(max_length=100)
     duration = models.DurationField()
     uploaded_time = models.DateTimeField(auto_now_add=True)
 

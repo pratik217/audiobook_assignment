@@ -50,7 +50,7 @@ class SongItemSerializer(serializers.ModelSerializer):
     name =serializers.CharField(max_length=100)
     class Meta:
         model = models.SongItem
-        fields = ('id', 'name', 'duration', 'uploaded_time')
+        fields = ('id', 'name', 'songfile','duration', 'uploaded_time')
         extra_kwargs = {'user_profile': {'read_only': True}}
 class PodcastItemSerializer(serializers.ModelSerializer):
     """Serializes profile feed items"""
